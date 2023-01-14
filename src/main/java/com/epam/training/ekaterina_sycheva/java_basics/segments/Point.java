@@ -1,5 +1,6 @@
 package com.epam.training.ekaterina_sycheva.java_basics.segments;
 
+
 class Point {
     private double x;
     private double y;

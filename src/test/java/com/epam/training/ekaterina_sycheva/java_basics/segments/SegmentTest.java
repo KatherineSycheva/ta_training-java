@@ -193,5 +193,4 @@ public class SegmentTest {
                 .add(Double.toString(point.getY()))
                 .toString();
     }
-
 }

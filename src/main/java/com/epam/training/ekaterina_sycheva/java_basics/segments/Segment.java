@@ -19,8 +19,7 @@ class Segment {
     }
 
     double length() {
-        double l = sqrt(pow((end.getX() - start.getX()), 2) + pow((end.getY()-start.getY()),2));
-        return l;
+        return sqrt(pow((end.getX() - start.getX()), 2) + pow((end.getY()-start.getY()),2));
     }
 
     Point middle() {
@@ -28,7 +27,7 @@ class Segment {
     }
 
     Point intersection(Segment another) {
-        if (this.isCollinear(another) == true) {
+        if (this.isCollinear(another)) {
             return null;
         } else {
             double x1 = this.start.getX();
@@ -52,20 +51,11 @@ class Segment {
     }
 
     boolean isBelonging(Point p) {
-        if ((p.getX() >= this.start.getX() && p.getX() <= this.end.getX()) || (p.getX()<=this.start.getX() && p.getX() >= this.end.getX())) {
-            return true;
-        } else {
-            return false;
-        }
+        return (p.getX() >= this.start.getX() && p.getX() <= this.end.getX()) || (p.getX() <= this.start.getX() && p.getX() >= this.end.getX());
     }
 
     boolean isCollinear(Segment s) {
-
-        if ((this.start.getX() - this.end.getX())*(s.start.getY()-s.end.getY())-(this.start.getY()-this.end.getY())*(s.start.getX()-s.end.getX()) == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return (this.start.getX() - this.end.getX()) * (s.start.getY() - s.end.getY()) - (this.start.getY() - this.end.getY()) * (s.start.getX() - s.end.getX()) == 0;
     }
 
 }
