@@ -4,8 +4,8 @@ import com.epam.training.ekaterina_sycheva.clean_code.aircompany.Planes.Experime
 import com.epam.training.ekaterina_sycheva.clean_code.aircompany.models.ClassificationLevel;
 import com.epam.training.ekaterina_sycheva.clean_code.aircompany.models.ExperimentalTypes;
 import com.epam.training.ekaterina_sycheva.clean_code.aircompany.models.MilitaryType;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import com.epam.training.ekaterina_sycheva.clean_code.aircompany.Planes.MilitaryPlane;
 import com.epam.training.ekaterina_sycheva.clean_code.aircompany.Planes.PassengerPlane;
 import com.epam.training.ekaterina_sycheva.clean_code.aircompany.Planes.Plane;
@@ -59,14 +59,14 @@ public class AirportTest {
     public void testGetTransportMilitaryPlanes() {
         Airport airport = new Airport(planes);
         Stream <MilitaryPlane> militaryPlanesStream = airport.getMilitaryPlanesSameType(MilitaryType.TRANSPORT).stream();
-        Assert.assertTrue(militaryPlanesStream.allMatch(plane -> plane.getType() == MilitaryType.TRANSPORT));
+        Assertions.assertTrue(militaryPlanesStream.allMatch(plane -> plane.getType() == MilitaryType.TRANSPORT));
     }
 
     @Test
     public void testGetPassengerPlaneWithMaxCapacity() {
         Airport airport = new Airport(planes);
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
-        Assert.assertEquals(planeWithMaxPassengerCapacity, expectedPlaneWithMaxPassengersCapacity);
+        Assertions.assertEquals(planeWithMaxPassengerCapacity, expectedPlaneWithMaxPassengersCapacity);
     }
 
     @Test
@@ -74,19 +74,19 @@ public class AirportTest {
         Airport airport = new Airport(planes);
         airport.sortBy(Plane::getMaxLoadCapacity);
         List<? extends Plane> planesSortedByMaxLoadCapacityActual = airport.getPlanes();
-        Assert.assertEquals(planesSortedByMaxLoadCapacity, planesSortedByMaxLoadCapacityActual);
+        Assertions.assertEquals(planesSortedByMaxLoadCapacity, planesSortedByMaxLoadCapacityActual);
     }
 
     @Test
     public void testHasAtLeastOneBomberInMilitaryPlanes() {
         Airport airport = new Airport(planes);
-        Assert.assertTrue(airport.getMilitaryPlanesSameType(MilitaryType.BOMBER).size() != 0);
+        Assertions.assertTrue(airport.getMilitaryPlanesSameType(MilitaryType.BOMBER).size() != 0);
     }
 
     @Test
     public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified(){
         Airport airport = new Airport(planes);
         List<ExperimentalPlane> experimentalPlanes = airport.getListOfPlanesSameType(ExperimentalPlane.class);
-        Assert.assertTrue(experimentalPlanes.stream().anyMatch(plane -> plane.getClassificationLevel() != ClassificationLevel.UNCLASSIFIED));
+        Assertions.assertTrue(experimentalPlanes.stream().anyMatch(plane -> plane.getClassificationLevel() != ClassificationLevel.UNCLASSIFIED));
     }
 }
