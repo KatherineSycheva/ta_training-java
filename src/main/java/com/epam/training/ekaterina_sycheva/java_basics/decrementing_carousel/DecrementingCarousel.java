@@ -11,12 +11,15 @@ public class DecrementingCarousel {
         car = new int[capacity];
     }
 
-    /*
-    boolean addElement(int element) – добавляет элемент.
-    Если элемент отрицателен или равен нулю, не добавляет его.
-    Если контейнер заполнен, не добавляет элемент.
-    Если метод run был вызван для создания CarouselRun, не добавляет элемент.
-    Если элемент добавлен успешно, возвращает true. В противном случае – false.*/
+    /**
+     * Adds an element to carousel.
+     * If element is negative or zero, does not add the element.
+     * If container is full, does not add the element.
+     * If the run method was called to create a CarouselRun, does not add the element.
+     * If element is added successfully, returns true, otherwise false.
+     * @param element
+     * @return true if element added else false
+     */
     public boolean addElement(int element){
         if (element > 0 && i < capacity && !endAdd) {
             car[i] = element;
@@ -26,11 +29,13 @@ public class DecrementingCarousel {
             return false;
         }
     }
-    /*
-    CarouselRun run() – возвращает CarouselRun для перебора элементов.
-    Если метод run уже был вызван ранее, он должен вернуть null:
-    DecrementingCarousel может генерировать только один объект CarouselRun.
-    */
+
+    /**
+     * Returns a CarouselRun to iterate over the elements.
+     * If the run method has already been called earlier, it returns null
+     * (DecrementingCarousel may generate only one CarouselRun object).
+     * @return CarouselRun
+     */
     public CarouselRun run(){
         if (endAdd) {
             return null;

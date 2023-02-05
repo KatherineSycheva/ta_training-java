@@ -11,12 +11,12 @@ public class CarouselRun {
         }
     }
 
-    /*
-    int next() – возвращает текущее значение текущего элемента,
-    затем уменьшает текущий элемент на единицу и переключается на следующий элемент
-    в порядке добавления.
-    Пропускает нулевые элементы. Когда больше нет элементов для уменьшения, возвращает -1.
-    */
+    /**
+     * Returns the current value of the current element,
+     * then decreases the current element by one and switches to the next element in insertion order.
+     * Skips zero elements. When there is no more elements to decrease, returns -1.
+     * @return current value
+     */
     public int next() {
         int m;
         if (isFinished()) {
@@ -43,9 +43,9 @@ public class CarouselRun {
         }
         return m;
     }
-    /*
-    boolean isFinished() – когда больше нет элементов для уменьшения, возвращает true.
-    В противном случае возвращает false.
+
+    /**
+     * When there is no more elements to decrease, returns true. Otherwise, returns false.
      */
     public boolean isFinished() {
         boolean fin = true;

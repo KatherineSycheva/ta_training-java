@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>com.epam.training.ekaterina_sycheva.java_basics.decrementing_carousel</title>
+</head>
+    <body>
+        <h3 style="color:Navy">com.epam.training.ekaterina_sycheva.java_basics.decrementing_carousel</h3>
+        <h1>Decrementing Carousel</h1>
+        <p style="font-size:20px">Decrementing Carousel is a container, accepting int elements.</p>
+        <p style="font-size:20px">DecrementingCarousel has a maximum capacity, specified via the constructor.</p>
+        <p style="font-size:20px">When created, DecrementingCarousel is in accumulating state: you may add elements via the addElement method and can produce a CarouselRun object via the run method.
+        Once the run method is called, DecrementingCarousel is in running state: it refuses adding more elements.
+        The CarouselRun allows to iterate over elements of the carousel decrementing them one by one with the next method.
+        The next returns the value of the current element:</p>
+        <img src="doc-files/dc-step1.png" height="400"/>
+        <p style="font-size:20px">Then it decreases the current element by one and switches to the next element:</p>
+        <img src="doc-files/dc-step2.png" height="400"/>
+        <img src="doc-files/dc-step3.png" height="400"/>
+        <p style="font-size:20px">The CarouselRun iterates over elements in the order of their insertion.
+        When an element is decreased to zero, the CarouselRun will skip it in further iterations.
+        When there are no more elements available for decrementing, the CarouselRun returns -1.
+        The CarouselRun also has the isFinished method, which indicates, if the carousel has run out of the lements to decrement.</p>
+    </body>
+</html>

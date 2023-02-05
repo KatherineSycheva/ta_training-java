@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class GoDutch {
 
     public static void main(String[] args) {
-        //Write code here
         Scanner console = new Scanner(System.in);
         int bill_sum = console.nextInt();
         int friends = console.nextInt();

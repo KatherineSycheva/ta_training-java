@@ -16,6 +16,10 @@ class Triangle extends Figure {
         return 0.5 * Math.abs((b.getX() - a.getX())*(c.getY()-a.getY()) - (c.getX()-a.getX())*(b.getY()-a.getY()));
     }
 
+    /**
+     * @return a String value in format: <code>(a.x,a.y)(b.x,b.y)(c.x,c.y)</code>
+     * Example: <code>(0.0,0.0)(0.1,5.8)(7.0,7.0)</code>
+     */
     @Override
     public String pointsToString() {
         return a.toString() + b.toString() + c.toString();

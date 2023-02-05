@@ -21,6 +21,10 @@ class Circle extends Figure {
         return center.toString();
     }
 
+     /**
+     * @return a String value in format: <code>(center.x,center.y)</code>
+      * Example: (0.0,0.6)
+     */
     @Override
     public String toString() {
             return this.getClass().getSimpleName() + "[" + pointsToString() + radius + "]";

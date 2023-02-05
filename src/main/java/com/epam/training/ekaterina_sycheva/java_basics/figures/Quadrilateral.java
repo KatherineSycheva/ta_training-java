@@ -27,7 +27,10 @@ class Quadrilateral extends Figure{
         }
     }
 
-
+    /**
+     * @return a String in format: <code>(a.x,a.y)(b.x,b.y)(c.x,c.y)(d.x, d.y)</code>
+     * Example: <code>(0.0,0.0)(0.0,7.1)(7.0,7.0)(7.0,0.0)</code>
+     */
     @Override
     public String pointsToString() {
         return a.toString() + b.toString() + c.toString() + d.toString();
