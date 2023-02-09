@@ -3,7 +3,7 @@ package com.epam.training.ekaterina_sycheva.java_basics.figures;
 abstract class Figure{
 
     /**
-     * Returns the area of the figure.
+     * Returns the area of the figure according to its type
      * @return the area of the figure.
      */
     public abstract double area();
@@ -33,8 +33,9 @@ abstract class Figure{
     public abstract Point leftmostPoint();
 
     /*
-    * compute length between to points
-    * */
+    * Return a distance between to points
+    * @return a distance between to points, a double value
+    */
     public double length(Point a, Point b) {
         return Math.sqrt(Math.pow((b.getX() - a.getX()),2) + Math.pow((b.getY() - a.getY()),2));
     }

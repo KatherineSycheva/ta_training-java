@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class TransposeMatrix {
     public static int[][] transpose(int[][] matrix) {
 
-        //Put your code here
         int rows = matrix[0].length;
         int cols = matrix.length;
         int [][] t_matrix = new int [rows][cols];

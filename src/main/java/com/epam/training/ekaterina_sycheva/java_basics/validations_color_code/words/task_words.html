@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Words</title>
+</head>
+<body>
+    <h1 id="words">Words</h1>
+    <p>The purpose of this exercise is to train you to work with strings.</p>
+    <p>Estimated workload of this exercise is <em>60 min</em>.</p>
+    <h3 id="description">Description</h3>
+    <p>Please, implement <code>StringUtil</code> class methods:</p>
+    <h4 id="1-countequalignorecaseandspaces">1. countEqualIgnoreCaseAndSpaces</h4>
+    <p>Method signature:</p>
+    <pre><code class="language-java">public static int countEqualIgnoreCaseAndSpaces(String[] words, String sample)
+    </code></pre>
+    <p>Return the number of words from <code>words</code> array that are equal to <code>sample</code> ignoring characters case and leading and trailing spaces.<br>If <code>sample</code> is <code>null</code> or <code>words</code> is <code>null</code> or empty, return <code>0</code>. <code>words</code> is guaranteed to not contain <code>null</code> values.</p>
+    <h4 id="2-splitwords">2. splitWords</h4>
+    <p>Method signature:</p>
+    <pre><code class="language-java">public static String[] splitWords(String text)
+    </code></pre>
+    <p>Split <code>text</code> string into array of words using following separating characters: <code>&quot;,&quot;, &quot;.&quot;, &quot;;&quot;, &quot;:&quot;, &quot; &quot;, &quot;?&quot;, &quot;!&quot;</code>.<br>For empty string, <code>null</code> string, and string consisting only of separating characters return <code>null</code></p>
+    <h4 id="3-convertpath">3. convertPath</h4>
+    <p>Method signature:</p>
+    <pre><code class="language-java">public static String convertPath(String path, boolean toWin)
+    </code></pre>
+    <p>Convert <code>path</code> to Unix\Windows path depending on a boolean parameter.</p>
+    <p>Unix path may start with <code>~</code> or <code>/</code>. Every subdirectory must end with <code>/</code> character except the last one.
+    Path elements <code>.</code> and <code>..</code> refer to current directory and parent directory.
+    Filename doesn&#39;t necessarily have the extension.<br>Unix path examples:</p>
+    <ul>
+        <li><code>/folder/../folder/file.txt</code></li>
+        <li><code>/dev/null</code></li>
+        <li><code>file.txt</code></li>
+        <li><code>folder/logs/</code></li>
+        <li><code>~/user/some_logs</code></li>
+    </ul>
+    <p>Windows path may start with <code>C:</code>. Every subdirectory must end with <code>\ </code> character except the last one.
+    Path elements <code>.</code> and <code>..</code> refer to current directory and parent directory.
+    Filename doesn&#39;t necessarily have the extension.<br>Windows path examples:</p>
+    <ul>
+        <li><code>file.txt</code></li>
+        <li><code>\Program Files\some_file.exe</code></li>
+        <li><code>.\to_do_list.txt</code></li>
+        <li><code>C:\Users\..\Cygwin</code></li>
+        <li><code>.\file</code></li>
+    </ul>
+    <p>Let&#39;s consider Unix <code>~</code> path to correspond to Windows <code>C:\User</code> path and vice versa.<br>Let&#39;s consider Unix <code>/</code> root folder (i.e., when the path starts with <code>/</code>) to correspond to Windows <code>C:\ </code> drive and vice
+    versa (but <code>C:\User</code> still corresponds to <code>~</code>).</p>
+    <p>If <code>path</code> already corresponds to the required format (for instance, is Windows path when Windows paths is needed and
+    <code>toWin</code> boolean parameter is <code>true</code>) return <code>path</code>.<br>If <code>path</code> is <code>null</code>, empty, or doesn&#39;t correspond to any path format (Unix, Windows), return <code>null</code>.<br>It is guaranteed that <code>path</code> is either a correct path, or it has some of the following errors:</p>
+    <ul>
+        <li>More than one <code>~</code></li>
+        <li><code>~</code> is not at the start</li>
+        <li><code>~</code> mixed with <code>\ </code> (<code>~</code> in Windows path)</li>
+        <li>More than one <code>C:</code></li>
+        <li><code>C:</code> is not at the start</li>
+        <li><code>C:</code> mixed with <code>/</code> (<code>C:</code> in Unix path)</li>
+        <li><code>\ </code> mixed with <code>/</code></li>
+    </ul>
+    <p>Illegal paths example:</p>
+    <ul>
+        <li><code>/folder1/folder2\folder3</code></li>
+        <li><code>C:\User/root</code></li>
+        <li><code>/dev/~/</code></li>
+        <li><code>C:/a/b/c/d</code></li>
+        <li><code>~\folder</code></li>
+        <li><code>~/~</code></li>
+        <li><code>~~</code></li>
+        <li><code>C:\Folder\Subfolder\C:\ </code></li>
+    </ul>
+    <h4 id="4joinwords">4.joinWords</h4>
+    <p>Method signature:</p>
+    <pre><code class="language-java">public static String joinWords(String[] words)
+    </code></pre>
+    <p>Join words from <code>words</code> array and return as a string in the following format: <code>&quot;[str_1, str_2, ..., str_n]&quot;</code>.</p>
+    <p>If <code>words</code> is <code>null</code> or empty return <code>null</code>. <code>words</code> is guaranteed to not contain <code>null</code> values. <code>words</code> may contain empty strings, ignore them, i. e. don&#39;t put them in the resulting string. If <code>words</code> contains only empty strings return <code>null</code>.</p>
+</body>
+</html>

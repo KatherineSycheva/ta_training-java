@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requirements</title>
+</head>
+<body>
+    <h1 id="requirements">Requirements</h1>
+    <p>The purpose of this exercise is to train you to work with exceptions, to raise them in particular.</p>
+    <p>Estimated workload of this exercise is <em>30 min</em>.</p>
+    <h3 id="description">Description</h3>
+    <p>Please, implement <code>Requirements</code> methods: </p>
+    <ol>
+        <li><code>requireNonNull(Object)</code> should throw new NullPointerException if object is <code>null</code></li>
+        <li><code>requireNonNull(Object, String)</code> should throw new NullPointerException with message if object is <code>null</code></li>
+        <li><code>checkArgument(boolean)</code> if boolean is <code>false</code> should throw new IllegalArgumentException </li>
+        <li><code>checkArgument(boolean, String)</code> if boolean is <code>false</code> should throw new IllegalArgumentException with message </li>
+        <li><code>checkState(boolean)</code> if boolean is <code>false</code> should throw new IllegalStateException </li>
+        <li><code>checkState(boolean, String)</code> if boolean is <code>false</code> should throw new IllegalStateException with message </li>
+        <li><code>checkIndex(int, int)</code> if index out of bounds throw new IndexOutOfBoundsException. Index must be inside <code>[0, size)</code> section.</li>
+    </ol>
+    <p>Such methods might be helpful to check arguments, object states. </p>
+</body>
+</html>

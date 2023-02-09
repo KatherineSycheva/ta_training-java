@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Figures</title>
+</head>
+<body>
+	<h1 id="figures">Figures</h1>
+	<p>The purpose of this exercise is to train you to work with classes, methods and inheritance.</p>
+	<p>Estimated workload of this exercise is <em>60 min</em>.</p>
+	<h3 id="description">Description</h3>
+	<p>Please, make <code>Triangle</code>, <code>Quadrilateral</code>, <code>Circle</code> classes
+	extend <code>Figure</code> abstract class.</p>
+	<p>Implement methods in <code>Triangle</code>, <code>Quadrilateral</code>, <code>Circle</code>:</p>
+	<ol>
+		<li><p>constructors with following parameters:</p>
+		   <ul>
+			   <li><code>Triangle</code> - three vertices (points) as parameters.</li>
+			   <li><code>Quadrilateral</code> - four vertices (points) as parameters.</li>
+			   <li><code>Circle</code> - point of the center and <code>double</code> value of the radius.</li>
+		   </ul>
+	   <p>All the input datasets in tests are guaranteed to form a non-degenerative figures.
+		For Quadrilaterals, it is guaranteed that all test datasets would form a convex quadrilaterals.</p>
+		</li>
+		<li>
+			<p><code>public double area()</code><br> Return the area of the figure.<br> <em>Note:</em> Convex quadrilaterals can be divided into two triangles by any of their diagonals. </p>
+		</li>
+		<li><p><code>public String pointsToString()</code><br> Return a String value in following formats:</p>
+			<ul>
+				<li><code>Triangle</code> - 
+					<ul>
+						<li>Format: <code>(a.x,a.y)(b.x,b.y)(c.x,c.y)</code></li>
+						<li>Example: <code>(0.0,0.0)(0.1,5.8)(7.0,7.0)</code></li>
+					</ul>
+				</li>
+				<li><code>Quadrilateral</code> - 
+					<ul>
+						<li>Format: <code>(a.x,a.y)(b.x,b.y)(c.x,c.y)(d.x, d.y)</code></li>
+						<li>Example: <code>(0.0,0.0)(0.0,7.1)(7.0,7.0)(7.0,0.0)</code></li>
+					</ul>
+				</li>
+				<li><code>Circle</code> - 
+					<ul>
+						<li>Format: <code>(center.x,center.y)</code></li>
+						<li>Example: <code>(0.0,0.6)</code></li>
+					</ul>
+				</li>
+			</ul>
+		<p> <em>Note:</em>: you may benefit from implementing toString() in the <code>Point</code> class</p>
+		</li>
+		<li><p><code>public String toString()</code><br> Return a String value in following formats:</p>
+			<ul>
+			<li><code>Triangle</code> - 
+				<ul>
+					<li>Format: <code>Triangle[(a.x,a.y)(b.x,b.y)(c.x,c.y)]</code></li>
+					<li>Example: <code>Triangle[(0.0,0.0)(0.1,5.8)(7.0,7.0)]</code></li>
+				</ul>
+			</li>
+			<li><code>Quadrilateral</code> - 
+				<ul>
+					<li>Format: <code>Quadrilateral[(a.x,a.y)(b.x,b.y)(c.x,c.y)(d.x, d.y)]</code></li>
+					<li>Example: <code>Quadrilateral[(0.0,0.0)(0.0,7.1)(7.0,7.0)(7.0,0.0)]</code></li>
+				</ul>
+			</li>
+			<li><code>Circle</code> - 
+				<ul>
+					<li>Format: <code>Circle[(center.x,center.y)radius]</code></li>
+					<li>Example: <code>Circle[(0.0,0.6)4.5]</code></li>
+				</ul>
+			</li>
+			</ul>
+			<p> <em>Note</em>: you may use default implementation given in the <code>Figure</code> class, when it suits a case well.</p>
+		</li>
+		<li><p><code>public Point leftmostPoint()</code><br>Return a leftmost point of the figure: the one having the least <code>X</code> coordinate.<br>If there are many leftmost points, return any of them.</p>
+		</li>
+	</ol>
+	<p><code>Point</code> class is already there.</p>
+	<p>Hints:</p>
+	<ul>
+		<li><a href="https://en.wikipedia.org/wiki/Degeneracy_(mathematics)">Degeneracy reference</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Quadrilateral#Convex_quadrilaterals">Convex quadrilateral reference</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Triangle#Computing_the_area_of_a_triangle">Triangle area reference</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Circle#Area_enclosed">Circle area reference</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Quadrilateral#Area_of_a_convex_quadrilateral">Quadrilateral area reference</a></li>
+	</ul>
+</body>
+</html>

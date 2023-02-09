@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Decrementing Carousel</title>
+</head>
+<body>
+	<h1 id="decrementing-carousel">Decrementing Carousel</h1>
+	<p>The purpose of this exercise is to train you designing simple classes and their relations.</p>
+	<p>Estimated workload of this exercise is <em>2h</em>.</p>
+	<h3 id="description">Description</h3>
+	<p><code>Decrementing Carousel</code> is a container, accepting <code>int</code> elements.
+	<code>DecrementingCarousel</code> has a maximum capacity, specified via the constructor.
+	When created, <code>DecrementingCarousel</code> is in accumulating state: you may add elements via the <code>addElement</code> method and can produce a <code>CarouselRun</code> object via the <code>run</code> method.
+	Once the <code>run</code> method is called, <code>DecrementingCarousel</code> is in running state: it refuses adding more elements.</p>
+	<p>The <code>CarouselRun</code> allows to iterate over elements of the carousel decrementing them one by one with the <code>next</code> method.
+	The <code>next</code> returns the value of the current element:</p>
+	<p><img src="dc-step1.png" alt=""></p>
+	<p>Then it decreases the current element by one and switches to the next element:</p>
+	<p><img src="dc-step2.png" alt="">
+	<img src="dc-step3.png" alt=""></p>
+	<p>The <code>CarouselRun</code> iterates over elements in the order of their insertion.<br>When an element is decreased to zero, the <code>CarouselRun</code> will skip it in further iterations.
+	When there are no more elements available for decrementing, the <code>CarouselRun</code> returns <code>-1</code>.</p>
+	<p>The <code>CarouselRun</code> also has the <code>isFinished</code> method, which indicates, if the carousel has run out of the lements to decrement.</p>
+	<h3 id="specification-details">Specification Details</h3>
+	<p><code>DecrementingCarousel</code> has two public methods:</p>
+	<ul>
+		<li><code>boolean addElement(int element)</code> - adds an element. 
+		If element is negative or zero, do not add the element.
+		If container is full, do not add the element.
+		If the <code>run</code> method was called to create a <code>CarouselRun</code>, do not add the element.
+		If element is added successfully, return <code>true</code>. Return <code>false</code> otherwise.</li>
+		<li><code>CarouselRun run()</code> - returns a <code>CarouselRun</code> to iterate over the elements.
+		If the <code>run</code> method has already been called earlier, it must return <code>null</code>:
+		<code>DecrementingCarousel</code> may generate only one <code>CarouselRun</code> object.</li>
+	</ul>
+	<p><code>CarouselRun</code> has two public methods:</p>
+	<ul>
+		<li><code>int next()</code> - returns the current value of the current element, 
+		then decreases the current element by one and switches to the next element in insertion order.
+		Skips zero elements. When there is no more elements to decrease, returns <code>-1</code>.</li>
+		<li><code>boolean isFinished()</code> - when there is no more elements to decrease, returns <code>true</code>. Otherwise, returns <code>false</code>.</li>
+	</ul>
+</body>
+</html>

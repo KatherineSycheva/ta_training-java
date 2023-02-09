@@ -17,6 +17,10 @@ class Point {
         return y;
     }
 
+    /**
+     * Returns a coordinates of the point in format: (x,y)
+     * @return a coordinates of the pointas String
+     */
     public String toString() {
         return "(" + this.getX() + "," + this.getY() + ")";
     }

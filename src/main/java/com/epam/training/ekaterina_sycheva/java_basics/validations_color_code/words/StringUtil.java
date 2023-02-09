@@ -1,4 +1,4 @@
-package com.epam.training.ekaterina_sycheva.java_basics.words;
+package com.epam.training.ekaterina_sycheva.java_basics.validations_color_code.words;
 
 import java.util.ArrayList;
 import java.util.Arrays;

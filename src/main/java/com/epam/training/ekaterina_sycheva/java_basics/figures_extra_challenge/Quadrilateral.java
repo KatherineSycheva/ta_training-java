@@ -9,22 +9,21 @@ class Quadrilateral extends Figure {
     Point d;
 
     public Quadrilateral (Point a, Point b, Point c, Point d) {
-        //abc, bcd, acd, abd
         Triangle t1 = new Triangle(a, b, c);
         Triangle t2 = new Triangle(b, c, d);
         Triangle t3 = new Triangle(a, c, d);
         Triangle t4 = new Triangle(a, b, d);
-        //degenerative test
+        //is degenerative
         if (t1.area() != 0 && t2.area() != 0 && t3.area() != 0 && t4.area() != 0){
             LineSegment ab = new LineSegment(a, b);
             LineSegment bc = new LineSegment(b, c);
             LineSegment cd = new LineSegment(c, d);
             LineSegment ad = new LineSegment(a, d);
-            //convex test
+            //is convex
             if (abs(t1.area()+t3.area()-t2.area()-t4.area()) > 0.01) {
                 throw new IllegalArgumentException("Quadrilateral cannot be nonconvex");
             } else {
-                //plain test
+                    //is plain
                     if (ab.pointCross(cd) == null && bc.pointCross(ad) == null) {
                     this.a = a;
                     this.b = b;

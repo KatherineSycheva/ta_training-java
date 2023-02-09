@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validations. EPAM Email</title>
+</head>
+<body>
+    <h1 id="validations-epam-email">Validations. EPAM Email</h1>
+    <p>The purpose of this exercise is to train you to work with string values.</p>
+    <p>Estimated workload of this exercise is <em>45 min</em>.</p>
+    <h3 id="description">Description</h3>
+    <p>Please, implement <code>validateEpamEmail</code> method
+    in <code>EpamEmailValidation</code>:</p>
+    <p>This method checks the input string for compliance with the rules for a regular EPAM email. Let us define them:</p>
+    <ul>
+        <li>A regular EPAM email includes firstname and lastname (in English), separated by underscore (&quot;_&quot;).</li>
+        <li>EPAM email always ends with &quot;@epam.com&quot;</li>
+        <li>When a person gets new EPAM email, but email with this firstname and lastname is already registered, we add &quot;1&quot; to the
+        new email. If such email is registered as well, we use &quot;2&quot; and so on.</li>
+    </ul>
+    <p>While implementing the method you might need to come up with <em>regular expressions</em>. You may consider
+    using <a href="https://regex101.com/">regex101.com</a> to ease designing them.</p>
+    <p>Note that input value may be null.</p>
+    <h3 id="examples">Examples</h3>
+    <ul>
+        <li><p>Valid examples</p>
+        <pre><code>william_shakespeare@epam.com
+        lu_e@epam.com
+        william_shakespeare1@epam.com
+        william_shakespeare2@epam.com
+        </code></pre>
+        </li>
+        <li><p>Invalid examples</p>
+        <pre><code> william@epam.com
+        william.shakespeare@epam.com
+        william...shakespeare@epam.com
+        william-shakespeare@epam.com
+        shakespeare123@epam.com
+        william_$hakespeare@epam.com
+        </code></pre>
+        </li>
+    </ul>
+</body>
+</html>

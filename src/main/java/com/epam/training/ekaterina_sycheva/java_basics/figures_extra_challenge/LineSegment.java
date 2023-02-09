@@ -6,12 +6,16 @@ public class LineSegment {
     Point c;
     Point d;
 
-
     public LineSegment (Point c, Point d) {
         this.c = c;
         this.d = d;
     }
 
+    /**
+     * Returns the intersection point of this segment and @param segment
+     * @param seg the segment to find the intersection with
+     * @return point of intersection. If segments doesn't cross returns null
+     */
     public Point pointCross(LineSegment seg) {
         double x1 = c.getX();
         double x2 = d.getX();
@@ -21,40 +25,48 @@ public class LineSegment {
         double y2 = d.getY();
         double y3 = seg.c.getY();
         double y4 = seg.d.getY();
-        //is lines cross
+        //is lines crosses
         if ((x1-x2)*(y3-y4)-(y1-y2)*(x3-x4) != 0) {
             double px = ((x1*y2-y1*x2)*(x3-x4) - (x1-x2)*(x3*y4-y3*x4)) / ((x1-x2)*(y3-y4)-(y1-y2)*(x3-x4));
             double py = ((x1*y2-y1*x2)*(y3-y4) - (y1-y2)*(x3*y4-y3*x4)) / ((x1-x2)*(y3-y4)-(y1-y2)*(x3-x4));
             Point p = new Point(px, py);
-            //is segments cross
-            if (pointBelongs(this, p) && pointBelongs(seg, p)) {
+            //is segments crosses
+            if (this.pointBelongs(p) && this.pointBelongs(p)) {
                 return p;
             }
         }
         return null;
     }
 
-    //is point belongs to line segment
-    public boolean pointBelongs(LineSegment seg, Point p) {
+    /**
+     * Returns True if p belongs to seg else False
+     * @param p point to check
+     * @return True if p belongs to seg else False
+     */
+    public boolean pointBelongs(Point p) {
         double minx, maxx, miny, maxy;
-        if (seg.c.getX() > seg.d.getX()) {
-            minx = seg.d.getX();
-            maxx = seg.c.getX();
+        if (this.c.getX() > this.d.getX()) {
+            minx = this.d.getX();
+            maxx = this.c.getX();
         } else {
-            minx = seg.c.getX();
-            maxx = seg.d.getX();
+            minx = this.c.getX();
+            maxx = this.d.getX();
         }
-        if (seg.c.getY() > seg.d.getY()) {
-            maxy = seg.c.getY();
-            miny = seg.d.getY();
+        if (this.c.getY() > this.d.getY()) {
+            maxy = this.c.getY();
+            miny = this.d.getY();
         } else {
-            maxy = seg.d.getY();
-            miny = seg.c.getY();
+            maxy = this.d.getY();
+            miny = this.c.getY();
         }
         if ((p.getX()<=maxx && p.getX()>=minx) && (p.getY()<=maxy && p.getY()>=miny)) return true;
         else return false;
     }
 
+    /**
+     * Returns the length of segment
+     * @return length of segment as double value
+     */
     public double length() {
         return sqrt(pow(d.getX()-c.getX(), 2) + pow(d.getY() - c.getY(), 2));
     }

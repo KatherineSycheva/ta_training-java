@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segments</title>
+</head>
+<body>
+    <h1 id="segments">Segments</h1>
+    <p>The purpose of this exercise is to train you to work with classes and methods.</p>
+    <p>Estimated workload of this exercise is <em>45 min</em>.</p>
+    <h3 id="description">Description</h3>
+    <p>Please, implement the following methods of class <code>Segment</code>: </p>
+    <ul>
+        <li>constructor with start and end points as parameters<br>Ensure that a created segment exists and is not degenerative
+        which means that the start and the end of the segment is not the same point.<br>If it is, use <code>throw new IllegalArgumentException()</code> to raise an error.</li>
+        <li><code>double length()</code><br>Return length of the segment.</li>
+        <li><code>Point middle()</code><br>Return a middle point of the segment.</li>
+        <li><code>Point intersection(Segment another)</code><br>Return a point of the intersection of the current segment and the given one.<br>Return <code>null</code> if there is no such point.<br>Return <code>null</code> if segments are collinear.<br>Please, note that intersection point must lay on both segments.</li>
+    </ul>
+    <p>Class <code>Point</code> is already there.</p>
+    <p>Hints:</p>
+    <ul>
+        <li><a href="https://www.wikihow.com/Use-Distance-Formula-to-Find-the-Length-of-a-Line">Length reference</a></li>
+        <li><a href="https://www.wikihow.com/Find-the-Midpoint-of-a-Line-Segment#Use-the-Midpoint-Formula">Midpoint reference</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection">Intersection reference</a></li>
+    </ul>
+</body>
+</html>

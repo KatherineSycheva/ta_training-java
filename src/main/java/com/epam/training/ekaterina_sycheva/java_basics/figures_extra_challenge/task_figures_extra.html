@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Figures. Extra Challenge</title>
+</head>
+<body>
+	<h1 id="figures-extra-challenge">Figures. Extra Challenge</h1>
+	<p>The purpose of this exercise is to train you to work with classes, methods and inheritance.</p>
+	<p>Estimated workload of this exercise is <em>60 min</em>.</p>
+	<h3 id="description">Description</h3>
+	<p>Please, make <code>Triangle</code>,
+	<code>Quadrilateral</code>,
+	<code>Circle</code> classes
+	extend <code>Figure</code> abstract class.</p>
+	<p>Implement methods in <code>Triangle</code>, <code>Quadrilateral</code>, <code>Circle</code>:</p>
+	<ol>
+		<li>Constructors with following parameters:
+			<ul>
+				<li><p><code>Triangle</code> - three vertices (points) as parameters.</p></li>
+				<li><p><code>Quadrilateral</code> - four vertices (points) as parameters.</p>
+				</li>
+				<li><p><code>Circle</code> - point of the center and double value of the radius.</p>
+				<p>Ensure figures are not degenerative.<br>All of them must have non-zero area.<br>Quadrilateral is also must be convex.<br>If a figure is not good, throw an IllegalArgumentException.<br><em>Note</em>: A non-degenerative convex quadrilateral is divided into four non-degenerative triangles by its diagonals.
+				<em>Note</em>: double calculations are not completely accurate, use <em>error delta</em>, where applies.</p>
+				</li>
+			</ul>
+		</li>
+		<li><code>public Point centroid()</code><br>  Return the centroid of the figure.<br>  Centroid refers to center of mass of the plain figure, not the baricenter.<br>  In other words it should be <em>&quot;area centroid&quot;</em></li>
+		<li><code>public boolean isTheSame(Figure figure)</code><br>  Two figures are considered to be the same only:
+			<ul>
+				<li><p>if they have the same type</p>
+				</li>
+				<li><p>and if they coincide (e.g. have same vertices).</p>
+				<p><em>Note</em>: order of the vertices have not to be the same.<br><em>Note</em>: double calculations are not completely accurate, use <em>error delta</em>, where applies.</p>
+				</li>
+			</ul>
+		</li>
+	</ol>
+	<p>  <em>Note for curious: it is almost like <code>equals()</code> but it is not. Method <code>equals</code> requires consistent behavior alongside <code>hashCode()</code> and it is quite complicated to establish in terms of approximate equality like in this exercise</em></p>
+	<p><code>Point</code> class is already there.</p>
+	<p>You may use <code>main</code> method of <code>Figure</code> class to tryout your code.</p>
+	<p>Hints:</p>
+	<ul>
+		<li><a href="https://en.wikipedia.org/wiki/Degeneracy_(mathematics)">Degeneracy reference</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Quadrilateral#Convex_quadrilaterals">Convex quadrilateral reference</a></li>
+		<li><a href="https://www.engineeringintro.com/mechanics-of-structures/centre-of-gravity/centroid-of-circle/">Circle centroid reference</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Centroid#Of_a_triangle">Triangle centroid reference</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Quadrilateral#Remarkable_points_and_lines_in_a_convex_quadrilateral">Quadrilateral centroid reference</a></li>
+		<li><a href="https://sites.math.washington.edu/~king/java/gsp/center-mass-quad.html">Quadrilateral centroid reference 2</a></li>
+	</ul>
+</body>
+</html>

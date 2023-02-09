@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Battleship 8x8</title>
+	</head>
+	<body>
+		<h1 id="battleship-8x8">Battleship 8x8</h1>
+		<p>The purpose of this exercise is to train you to work with wrapper classes and their static methods.</p>
+		<p>Estimated workload of this exercise is <em>3 hours</em>.</p>
+		<h3 id="description">Description</h3>
+		<p>Please, implement methods in <code>Battleship8x8</code> class.</p>
+		<p>Battleship8x8 represents a 8x8 map for <a href="https://en.wikipedia.org/wiki/Battleship_(game)">Battleship game</a>.
+		An important detail is that Battleship8x8 uses a <code>ships</code> field of long type to store ships locations 
+		and a <code>shots</code> field of long type to register shots.</p>
+		<p>Fields of long type value store 64 bits each. Consider them as 8 rows per 8 cells.
+		&#39;0&#39; bits represent empty cells, &#39;1&#39; bits represent cells seized by ships or registered shots.</p>
+		<ul>
+			<li><code>public boolean shoot(String shot)</code> - Registers a shot and returns <code>true</code> if the shot hits a ship. 
+			A shot is a combination of one of A-H letters and one of 1-8 digits</li>
+			<li><code>public String state()</code> - Returns a string representing state of the map.
+			Map string is 8 lines per 8 characters separated by &quot;\n&quot;. Use following symbols: <ul>
+			<li>&#39;.&#39; - an empty cell</li>
+			<li>&#39;×&#39; - an empty cell that has been shot</li>
+			<li>&#39;☐&#39; - a cell seized by a ship</li>
+			<li>&#39;☒&#39;- a cell seized by a ship that has been shot</li></ul>
+		</ul>
+		<p>You must not add or change new fields.
+		Consider using static methods of wrapper classes.</p>
+		<h3 id="example">Example</h3>
+		<p>Consider a map information encoded as a long value: </p>
+		<code class="language-java">long map = -1150950973573693440L;
+		</code>
+		<p>You may consider it represented as binary literal:</p>
+		<code class="language-java">/*
+			11110000
+			00000111
+			00000000
+			00110000
+			00000010
+			01000000
+			00000000
+			00000000
+		 */
+		long map = 0b11110000_00000111_00000000_00110000_00000010_01000000_00000000_00000000L;
+		</code>
+		<p>Consider rows be marked with digits and columns be marked with letters:</p>
+		<code class="language-java"> ABCDEFGH<br></code>
+		<code class="language-java"> ┌────────<br></code>
+		<code class="language-java">1│11110000<br></code>
+		<code class="language-java">2│00000111<br></code>
+		<code class="language-java">3│00000000<br></code>
+		<code class="language-java">4│00110000<br></code>
+		<code class="language-java">5│00000010<br></code>
+		<code class="language-java">6│01000000<br></code>
+		<code class="language-java">7│00000000<br></code>
+		<code class="language-java">8│00000000<br></code>
+		<p>Consider the following list of shots:</p>
+		<code class="language-java">List&lt;&gt; shots = List.of(&quot;A1&quot;, &quot;B2&quot;, &quot;C3&quot;, &quot;D4&quot;);
+		</code>
+		<p>Then we could use <code>Battleship8x8</code> API:</p>
+		<code class="language-java">Battleship8x8 battle = new Battleship8x8(map);
+		shots.forEach(battle::shoot);
+		System.out.println(battle.state());
+		</code>
+		<p>The result would be the following:</p>
+		<div face="Country">
+			<code>☒☐☐☐....</code><br>
+			<code>.×...☐☐☐</code><br>
+			<code>..×.....</code><br>
+			<code>..☐☒....</code><br>
+			<code>......☐.</code><br>
+			<code>.☐......</code><br>
+			<code>........</code><br>
+			<code>........</code>
+		</div>
+	</body>
+</html>

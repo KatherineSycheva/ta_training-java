@@ -1,6 +1,5 @@
 package com.epam.training.ekaterina_sycheva.java_basics.segments;
 
-import java.nio.channels.Pipe;
 import static java.lang.Math.*;
 import static java.lang.StrictMath.pow;
 

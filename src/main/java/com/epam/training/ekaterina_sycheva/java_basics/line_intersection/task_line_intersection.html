@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Line Intersection</title>
+</head>
+<body>
+	<h1 id="line-intersection">Line Intersection</h1>
+	<p>The purpose of this exercise is to train you to work with classes and methods.</p>
+	<p>Estimated workload of this exercise is <em>45 min</em>.</p>
+	<h3 id="description">Description</h3>
+	<p>Please, implement the method <code>intersection(Line)</code> in class <code>Line</code>.
+	  It  must return a <code>Point</code> of intersection of two lines.</p>
+	<p>Note that lines are defined by linear equations: <code>y = k * x + b</code>.
+	  Line constructor takes <code>k</code> and <code>b</code> coefficients as parameters.</p>
+	<p>If lines coincide or do not intersect, the method must return null.
+	  It may seem surprising that we use <code>int</code> for arguments and fields of coordinates.
+	  The point is that using <code>double</code> will bring some extra complexity we want to avoid for this basic exercise.
+	  All tests are selected in to induce calculations without remainders.</p>
+	<p>You may check your result in class <code>Main</code>.</p>
+	<h3 id="example">Example</h3>
+	<pre><code class="language-java">public class Main {
+		public static void main(String[] args) {
+			Line line1 = new Line(1,1);
+			Line line2 = new Line(-1,3);
+
+			System.out.println(line1.intersection(line2)); // (1;2)
+		}
+	}
+	</code></pre>
+</body>
+</html>

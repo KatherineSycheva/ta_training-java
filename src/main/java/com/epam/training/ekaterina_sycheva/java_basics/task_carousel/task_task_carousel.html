@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Carousel</title>
+</head>
+<body>
+<h1 id="task-carousel">Task Carousel</h1>
+<p>The purpose of this exercise is to train you designing simple interface implementations and use them.</p>
+<p>Estimated workload of this exercise is <em>2h</em>.</p>
+<h3 id="description">Description</h3>
+<p>In this exercise you need to design two implementations of the <code>Task</code> interface:</p>
+<ul>
+  <li><code>CountDownTask</code>:<ul>
+    <li>The constructor of <code>CountDownTask</code> takes a single int value as a parameter.
+      It is the initial value of the countdown.
+      Input value must not be negative. If it is, set zero value.</li>
+    <li>Each time the <code>execute</code> method is called, this value decrements by one, until it reaches zero.
+      Then the <code>execute</code> method no longer decrements the value and the task is considered finished.</li>
+    <li>If the task is initialized with zero value, consider it finished right upon creating.</li>
+    <li>Value of the task is accessible via getter.</li>
+  </ul>
+  </li>
+  <li><code>CompleteByRequestTask</code>:<ul>
+    <li>Constructor of the <code>CompleteByRequestTask</code> takes no parameters.</li>
+    <li>Calling <code>execute</code> method on the task does not make it finished until the <code>complete</code> method is called.</li>
+    <li>Once the <code>complete</code> method is called, the next call to <code>execute</code> makes the task finished.
+      Note that the task is not finished right after calling the <code>complete</code> method.
+      The task finishes <strong>only</strong> when subsequent call to <code>execute</code> occurs.</li>
+  </ul>
+  </li>
+</ul>
+<p>Also, you need to implement the <code>TaskCarousel</code>:</p>
+<ul>
+  <li>A task carousel has a capacity provided as a constructor parameter.</li>
+  <li>The <code>TaskCarousel</code> has <code>isEmpty</code> method.
+    It returns <code>true</code> if there is no task in the carousel for execution.
+    Returns <code>false</code> otherwise.</li>
+  <li>The <code>TaskCarousel</code> has <code>isFull</code> method.
+    It returns <code>true</code> if there is no more room in the carousel to add another task.
+    Returns <code>false</code> otherwise.</li>
+  <li>You may add tasks to the carousel via <code>addTask</code> method. It returns <code>true</code> if the task is accepted and <code>false</code> otherwise.
+    Task may be not accepted due to following reasons:<ul>
+      <li>Task argument is null.</li>
+      <li>Task is already finished.</li>
+      <li>Carousel is full.</li>
+    </ul>
+  </li>
+  <li>You may execute tasks in the carousel via <code>execute</code> method.<ul>
+    <li>Each time when this method is invoked, carousel must switch to the next task within and execute it.</li>
+    <li>Iteration is in circular manner.
+      If there are 4 tasks inside a carousel,
+      then if we call <code>execute</code> method on the carousel 4 times in a row,
+      each task must be executed once.</li>
+    <li>If the task is finished after execution, remove it from the carousel.</li>
+    <li>The method returns <code>true</code> if any task was executed. Returns <code>false</code> otherwise.</li>
+  </ul>
+  </li>
+</ul>
+
+</body>
+</html>

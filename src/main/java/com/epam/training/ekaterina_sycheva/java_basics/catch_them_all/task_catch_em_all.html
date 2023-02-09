@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Catch em all</title>
+	</head>
+	<body>
+		<h1 id="catchem-all">Catch&#39;em all</h1>
+		<p>The purpose of this exercise is to train you to work with exceptions, to handle them in particular.</p>
+		<p>Estimated workload of this exercise is <em>30 min</em>.</p>
+		<h3 id="description">Description</h3>
+		<p>Please, implement the main method in <code>CatchEmAll</code> class.
+		It must handle a call to a risky method that can throw different types of exceptions.</p>
+		<p>Please, note that some types of exceptions should be handled, while others – shouldn’t.</p>
+		<p>Details:</p>
+		<table>
+			<thead>
+				<tr>
+					<th>What is thrown</th>
+					<th>How to handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>IOException</td>
+					<td>Wrap in an IllegalArgumentException with a message &quot;Resource error&quot; and throw it</td>
+				</tr>
+				<tr>
+					<td>FileNotFoundException</td>
+					<td>Wrap in an IllegalArgumentException with a message &quot;Resource is missing&quot; and throw it</td>
+				</tr>
+				<tr>
+					<td>ArithmeticException or NumberFormatException</td>
+					<td>Print a message of the thrown exception to System.err and do not throw anything</td>
+				</tr>
+				<tr>
+					<td>Any other Exceptions</td>
+					<td>Should not be caught</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
